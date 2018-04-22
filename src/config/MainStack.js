@@ -18,8 +18,7 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 import {handleResetNavigation} from './NavigationHelp'
 import CouponList from '../screens/Coupon/CouponList';
 import CouponDetail from '../screens/Coupon/CouponDetail';
-
-
+import Store from '../screens/Store/Store';
 
 const mainNav = StackNavigator({
     Home: {
@@ -57,7 +56,14 @@ const mainNav = StackNavigator({
             headerLeft:<Header onPress={()=> navigation.goBack()} iconName={"navigate-before"} />,
             title:"Chi tiết coupon",
         })
+    },
+    Store:{
+        screen: Store,
+        navigationOptions:({navigation}) => ({
+          
+        })
     }
+
 
 
    

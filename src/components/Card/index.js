@@ -9,8 +9,8 @@ export default class Card extends Component {
     state = {}
     render() {
         return (
-            <View style={{ height: 130, width: deviceScreen.width }}>
-                <View style={{ marginLeft: 20, marginRight: 20, marginTop: 10, flexDirection: 'row' }}>
+            <View style={{ height: 110, width: deviceScreen.width }}>
+                <View style={{ marginLeft: 5, marginRight: 15, marginTop: 5, flexDirection: 'row',paddingLeft:5, paddingRight:5,paddingTop:10 }}>
                     <Image style={{ width: 90, height: 90, borderRadius: 10 }} source={{ uri: this.props.uri }} />
                     <View style={{ marginLeft: 10, justifyContent: 'center' }}>
                         <View style={{ width: deviceScreen.width - 130 }}>

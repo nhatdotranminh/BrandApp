@@ -8,8 +8,8 @@ const emptyAuthState = {
 };
 const initialState = {
     isFetching: false,
-    email: 'tuanmaster2012@gmail.com',
-    password: '123456',
+    email: 'nhatdo996@gmail.com',
+    password: 'dotranminhnhat@123',
     screenname: '',
     companylist: [],
     errors: {

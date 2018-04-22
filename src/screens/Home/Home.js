@@ -4,9 +4,8 @@ import { connect } from 'react-redux'
 import { Button } from '../../components/Form';
 import Card from '../../components/Card'
 import Icon from "react-native-vector-icons/MaterialIcons";
-import { ICON_SIZE } from '../../utils/ConfigApp';
 import Barcode from 'react-native-barcode-builder';
-
+import * as ConfigApp from '../../utils/ConfigApp';
 deviceScreen = Dimensions.get('window')
 // =================
 class Home extends Component {
@@ -69,21 +68,21 @@ class Home extends Component {
             <View style={styles.container}>
                 <View style={styles.top_container}>
                     <View style={styles.top_child}>
-                        <Icon color={"lightblue"} size={ICON_SIZE} name={'info'} />
+                        <Icon color={ConfigApp.Blue} size={ConfigApp.ICON_SIZE} name={'info'} />
                         <View style={{ marginLeft: 10 }}>
                             <Text style={styles.top_child_point}>1,213</Text>
                             <Text style={styles.top_child_text}>{"Điểm"}</Text>
                         </View>
                     </View>
                     <View style={styles.top_child}>
-                        <Icon color={"pink"} size={ICON_SIZE} name={'star-border'} />
+                        <Icon color={ConfigApp.Pink} size={ConfigApp.ICON_SIZE} name={'star-border'} />
                         <View style={{ marginLeft: 10 }}>
                             <Text style={styles.top_child_point}>213</Text>
                             <Text style={styles.top_child_text}>{"Sao"}</Text>
                         </View>
                     </View>
                     <View style={styles.top_child}>
-                        <Icon color={"lightgreen"} size={ICON_SIZE} name={'card-travel'} />
+                        <Icon color={ConfigApp.Green} size={ConfigApp.ICON_SIZE} name={'card-travel'} />
                         <View style={{ marginLeft: 10 }}>
                             <Text style={styles.top_child_point}>13</Text>
                             <Text style={styles.top_child_text}>{"Đơn hàng"}</Text>
@@ -111,7 +110,7 @@ class Home extends Component {
                     <View style={{ marginLeft: 20, marginRight: 20 }}>
                         <Button
                             title={"XEM TẤT CẢ ƯU ĐÃI"}
-                            color={"blue"}
+                            color={ConfigApp.Blue}
                             buttonStyle={styles.button_style}
                         />
                     </View>

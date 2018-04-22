@@ -1,1 +1,1 @@
-export const BASE_URL = 'http://api.movecrop.com/v1';
+export const BASE_URL = 'http://api.teamcrop.com/v1';

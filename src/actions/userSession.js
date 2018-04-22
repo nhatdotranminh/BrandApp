@@ -15,6 +15,7 @@ export const LOGIN_DISMISS_ERROR = "LOGIN_DISMISS_ERROR";
 export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
 export const LOGOUT_FAIL = "LOGOUT_FAIL";
 export const LOGIN_FB = "LOGIN_FB";
+export const LOGIN_SHOW_SELECT_COMPANY ="LOGIN_SHOW_SELECT_COMPANY"
 export function loginRequest({email, password, screenname}) {
     return function (dispatch) {
         dispatch({type: LOGIN_REQUEST});
@@ -22,7 +23,7 @@ export function loginRequest({email, password, screenname}) {
             .post('/users/login', {email, password, screenname})
             .then(response => {
                 if (response.data.jwt === null || response.data.jwt.length == 0) {
-                    
+                    dispatch({type: LOGIN_SHOW_SELECT_COMPANY, data: response.data.companylist});
                 } else {
                     //store authorization header
                     axios.defaults.headers.common['Authorization'] = response.data.jwt;
@@ -31,6 +32,7 @@ export function loginRequest({email, password, screenname}) {
                 }
             })
             .catch((error) => {
+                console.log(error)
                 dispatch({type: LOGIN_FAILED, errors: error.response.data.error});
             });
     }

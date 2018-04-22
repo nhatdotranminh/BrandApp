@@ -17,30 +17,30 @@ export default class LoginSelectCompany extends Component {
         ? this.props.companylist[0].screenname
         : this.props.screenname;
     this.props.inputChange({ screenname: defaultvalue });
-   console.log(defaultvalue)
+    console.log(defaultvalue)
   }
   render() {
     return (
       <View>
-          <Text style={{textAlign:'center'}}>Chọn một công ty để tiếp tục:</Text>
+        <Text style={{ textAlign: 'center' }}>Chọn một công ty để tiếp tục:</Text>
 
-          <Picker
-            selectedValue={this.props.screenname}
-            onValueChange={itemValue =>
-              this.props.inputChange({ screenname: itemValue})
-            }
-          >
-            {this.props.companylist.map(item => {
-              return (
-                <Picker.Item
-                  label={item.name}
-                  value={item.screenname}
-                  key={item.id}
-                />
-              );
-            })}
-          </Picker>
-       
+        <Picker
+          selectedValue={this.props.screenname}
+          onValueChange={itemValue =>
+            this.props.inputChange({ screenname: itemValue })
+          }
+        >
+          {this.props.companylist.map(item => {
+            return (
+              <Picker.Item
+                label={item.name}
+                value={item.screenname}
+                key={item.id}
+              />
+            );
+          })}
+        </Picker>
+
 
         <View style={styles.container}>
           {this.props.isFetching ? (
@@ -51,10 +51,10 @@ export default class LoginSelectCompany extends Component {
               style={styles.activityIndicator}
             />
           ) : (
-            <View style={{ width: deviceScreen.width - 30 }}>
-              <Button onPress={this.props.doLogin} title={"Tiếp tục"} />
-            </View>
-          )}
+              <View style={{ width: deviceScreen.width - 30 }}>
+                <Button onPress={this.props.doLogin} title={"Tiếp tục"} />
+              </View>
+            )}
         </View>
       </View>
     );
@@ -62,7 +62,7 @@ export default class LoginSelectCompany extends Component {
 }
 const styles = StyleSheet.create({
   container: {
-    marginTop:15,
+    marginTop: 15,
     alignItems: "center"
   },
   activityIndicator: {
